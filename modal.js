@@ -1,5 +1,6 @@
 import { addUser as addUserToTable } from './users.js';
 import {data} from './data.js';
+import {setItemToLocalStorage} from './setLocalStorage.js';
 
 const MAX_SYMBOLS = 20;
 const validationErrors = new Set();
@@ -37,13 +38,7 @@ function keydownListener(event) {
   }
 }
 
-function setItemToLocalStorage() {
-  const firstName = userNameInput.value;
-  const lastName = lastNameInput.value;
-  const age = ageInput.value;
-  data.push({firstName, lastName, age});
-  localStorage.setItem( 'users', JSON.stringify(data))
-}
+
 
 function hideModalWindow() {
   userNameInput.value = '';
